@@ -1,5 +1,4 @@
-
-    const TRE_STATE = {
+const TRE_STATE = {
 page: 'postagens',
 cargo: null,
 course: null
@@ -323,7 +322,11 @@ return String(tsv || '')
 }
 
 async function fetchAccessRows() {
-const response = await fetch(`${WORKER_URL}?gid=0`, {
+const accessUrl = new URL(WORKER_URL);
+accessUrl.searchParams.set('gid', '0');
+accessUrl.searchParams.set('_', Date.now().toString());
+
+const response = await fetch(accessUrl.toString(), {
 cache: 'no-store'
 });
 
@@ -571,7 +574,7 @@ url.searchParams.set('head_direction', '3');
 url.searchParams.set('direction', '3');
 url.searchParams.set('gesture', 'sml');
 url.searchParams.set('size', 'b');
-return proxiedUrl(url);
+return url.toString();
 }
 
 function setOrientationContent(cargo) {
