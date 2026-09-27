@@ -1604,10 +1604,15 @@ if (actions) actions.classList.toggle('two-actions', !visible);
 }
 
 function createGradForumBbcode(data) {
-return '[font=Trebuchet MS][b][color=#b30000]APROVAÇÃO EM GRADUAÇÃO[/color][/b]\n\n' +
-'[b]Nickname do Graduador:[/b] ' + data.applicator + '\n' +
-'[b]Membro Graduado:[/b] ' + data.approved.join(' / ') + '\n' +
-'[b]Tipo de Graduação:[/b] ' + data.graduationType + '[/font]';
+return '[left][table style="border-radius: 20px 0 14px 0; overflow: hidden; z-index: 2; margin-top: -35px; position: relative; top: 87px; width: auto; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);" bgcolor="#320406"][tr][td style="padding: 8px 14px;"][font=Poppins][color=#f8f8ff][size=16][b]APROVAÇÃO EM GRADUAÇÃO[/b][/size][/color][/font][/td][td][img]https://i.imgur.com/Febhf4Z.png[/img]\n' +
+'[/td][/tr][/table][/left]\n\n' +
+'[table style="border-radius: 20px; overflow: hidden; width: 100%; z-index: 1; box-shadow: 0 0 0 4px #320406; height: 120px;" bgcolor="#FFFFFF"]\n' +
+'[tr][td style="padding: 10px;"]\n\n\n\n' +
+'[font=Poppins][justify][b][color=#320406]Nickname do Graduador:[/color][/b] ' + data.applicator + '\n' +
+'[b][color=#320406]Membro Graduado:[/color][/b] ' + data.approved.join(' / ') + '\n' +
+'[b][color=#320406]Tipo de Graduação:[/color][/b] ' + data.graduationType + '\n' +
+'[/justify][/font]\n' +
+'[/td][/tr][/table]';
 }
 
 if (typeof window.animarAssinatura !== 'function') {
